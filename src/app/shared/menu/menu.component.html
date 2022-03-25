@@ -1,0 +1,8 @@
+<p-menubar [model]="items">
+  <ng-template pTemplate="start">
+    <p-image src="../../../assets/logos/Logo-Ziri-(Propuesta).png" alt="Logo" width="150"></p-image>
+  </ng-template>
+  <button *ngFor="let button of buttonsLabel" pButton label="{{button.label}}" icon="{{button.icon}}"
+    routerLink="{{button.route}}"></button>
+
+</p-menubar>
