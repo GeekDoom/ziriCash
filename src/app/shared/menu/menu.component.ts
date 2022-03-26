@@ -31,12 +31,14 @@ export class MenuComponent implements OnInit {
             label: 'User',
             icon: 'pi pi-fw pi-users',
             routerLink: '/user',
+            styleClass: 'md:mr-3'
 
           },
           {
             label: 'Admin',
             icon: 'pi pi-fw pi-user',
             routerLink: '/admin',
+
           }
 
         ];
@@ -50,22 +52,26 @@ export class MenuComponent implements OnInit {
             label: 'Users',
             icon: 'pi pi-fw pi-users',
             routerLink: '/admin/users',
+            styleClass: 'md:mr-3'
 
           },
           {
             label: 'Reports',
-            icon: 'pi pi-fw pi-user',
+            icon: 'pi pi-fw pi-ticket',
             routerLink: '/admin/reports',
+            styleClass: 'md:mr-3'
           },
           {
             label: 'Publications',
-            icon: 'pi pi-fw pi-user',
+            icon: 'pi pi-fw pi-book',
             routerLink: '/admin/publications',
+            styleClass: 'md:mr-3'
           },
           {
             label: 'Transactions',
-            icon: 'pi pi-fw pi-user',
+            icon: 'pi pi-fw pi-chart-line',
             routerLink: '/admin/transactions',
+            styleClass: 'md:mr-3'
           }
 
         ];
@@ -77,19 +83,22 @@ export class MenuComponent implements OnInit {
         this.items = [
           {
             label: 'Wallet',
-            icon: 'pi pi-fw pi-users',
+            icon: 'pi pi-fw pi-wallet',
             routerLink: '/user/wallet',
+            styleClass: 'md:mr-3 ripple'
 
           },
           {
             label: 'Exchange',
-            icon: 'pi pi-fw pi-user',
+            icon: 'pi pi-fw pi-sort-alt',
             routerLink: '/user/exchange',
+            styleClass: 'md:mr-3'
           },
           {
             label: 'Generate',
-            icon: 'pi pi-fw pi-user',
+            icon: 'pi pi-percentage',
             routerLink: '/user/generate',
+            styleClass: 'md:mr-3'
           }
 
         ];
@@ -99,14 +108,15 @@ export class MenuComponent implements OnInit {
         this.items = [
           {
             label: 'Login',
-            icon: 'pi pi-fw pi-users',
-            routerLink: '/user/wallet',
+            icon: 'pi pi-fw pi-sign-in',
+            routerLink: '/auth/login',
+            styleClass: 'md:mr-3'
 
           },
           {
             label: 'Register',
-            icon: 'pi pi-fw pi-user',
-            routerLink: '/user/exhange',
+            icon: 'pi pi-fw pi-sign-out',
+            routerLink: '/auth/register',
           }
 
         ];
@@ -117,7 +127,7 @@ export class MenuComponent implements OnInit {
         {
           label: 'Login',
           route: '/auth',
-          icon: 'pi pi-lock-open'
+          icon: 'pi pi-fw pi-sign-in'
         }
 
       ]
@@ -126,7 +136,7 @@ export class MenuComponent implements OnInit {
         {
           label: 'Logout',
           route: '/index',
-          icon: 'pi pi-power-off'
+          icon: 'pi pi-fw pi-sign-out'
         }
       ]
     }
