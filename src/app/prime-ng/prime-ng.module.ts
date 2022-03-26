@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 import { ImageModule } from 'primeng/image';
 import { MenubarModule } from 'primeng/menubar';
+import { RippleModule } from 'primeng/ripple';
 
 
 @NgModule({
@@ -9,8 +10,8 @@ import { MenubarModule } from 'primeng/menubar';
     ButtonModule,
     ImageModule,
     MenubarModule,
-
-
+    RippleModule
+    
   ]
 })
 export class PrimeNgModule { }

@@ -1,8 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
-@import "primeflex/primeflex.css";
+@import "primeflex/primeflex.min.css";
 html,
 body {
-  margin: 10px;
   background-color: var(--surface-b);
   font-family: var(--font-family);
 }
@@ -10,4 +9,3 @@ body {
 .text-layout-color {
   color: var(--text-color)
 }
-
