@@ -85,7 +85,7 @@ export class MenuComponent implements OnInit {
             label: 'Wallet',
             icon: 'pi pi-fw pi-wallet',
             routerLink: '/user/wallet',
-            styleClass: 'md:mr-3 ripple'
+            styleClass: 'md:mr-3'
 
           },
           {
