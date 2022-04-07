@@ -1,1 +1,70 @@
 <app-menu></app-menu>
+<div class="flex justify-content-center py-8 px-8 mb-8">
+  <div class="surface-card p-4 shadow-2 border-round w-full lg:w-6">
+    <div class="text-center mb-5">
+      <img src="assets/logos/Logo-Ziri-(Propuesta).png" alt="Image" height="50" class="mb-3">
+      <div class="text-900 text-3xl font-medium mb-3">Welcome</div>
+      <span class="text-600 font-medium line-height-3">Have an account?</span>
+      <a routerLink="/auth/login" class="font-medium no-underline ml-2 text-blue-500 cursor-pointer">Login!</a>
+    </div>
+    <div class="form-grid grid">
+      <div class="field col">
+        <span class="p-input-icon-left w-full">
+          <i class="pi pi-envelope"></i>
+          <input id="email1" type="email" pInputText class="w-full" placeholder="Email">
+        </span>
+      </div>
+      <div class="fild col">
+        <span class="p-input-icon-left w-full">
+          <i class="pi pi-envelope"></i>
+          <input id="email2" type="email" pInputText class="w-full" placeholder="Confirm Email">
+        </span>
+      </div>
+    </div>
+    <div class="form-grid grid">
+      <div class="field col">
+        <span class="p-input-icon-left w-full">
+          <i class="pi pi-lock"></i>
+          <input id="password1" type="password" pInputText class="w-full" placeholder="Password">
+        </span>
+      </div>
+      <div class="field col">
+        <span class="p-input-icon-left w-full">
+          <i class="pi pi-lock"></i>
+          <input id="password2" type="password" pInputText class="w-full" placeholder="Confirm Password">
+        </span>
+      </div>
+    </div>
+    <div class="form-grid grid">
+      <div class="field col">
+        <span class="p-input-icon-left w-full">
+          <i class="pi pi-user-plus"></i>
+          <input id="refer" type="text" pInputText class="w-full" placeholder="Refer Code">
+        </span>
+      </div>
+      <div class="field col">
+        <span class="p-input-icon-left w-full">
+          <i class="pi pi-globe"></i>
+          <input id="pais" type="text" pInputText class="w-full" placeholder="Country">
+        </span>
+      </div>
+    </div>
+
+
+
+
+
+    <div class="flex align-items-center justify-content-between mb-6">
+      <div class="flex align-items-center">
+        <p-checkbox id="rememberme1" [binary]="true" styleClass="mr-2"></p-checkbox>
+        <label for="rememberme1" class="text-900">Remember me</label>
+      </div>
+      <!--<a class="font-medium no-underline ml-2 text-blue-500 text-right cursor-pointer">Forgot password?</a> -->
+    </div>
+
+    <button pButton pRipple label="Sign Up" class="w-full"></button>
+  </div>
+</div>
+
+
+<app-footer></app-footer>
