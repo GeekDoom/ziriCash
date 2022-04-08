@@ -2,10 +2,12 @@
   <div class=" border-300 pt-5 text-center"><img src="assets/logos/Logo-Ziri-(Propuesta).png" alt="Image" height="36">
     <ul class="list-none p-0 mx-0 my-5 flex justify-content-center flex-column align-items-center lg:flex-row">
       <li><a class="text-600 cursor-pointer 
-                    line-height-3 lg:mr-5" (click)="show(1)">Programa de Inversión
+                    line-height-3 lg:mr-5" (click)="modals.show(1)">Programa de Inversión
         </a></li>
-      <li><a class="text-600 cursor-pointer line-height-3 lg:mr-5" (click)="show(2)">Trabaja con nosotros</a></li>
-      <li><a class="text-600 cursor-pointer line-height-3 lg:mr-5">Preguntas frecuentes</a></li>
+      <li><a class="text-600 cursor-pointer line-height-3 lg:mr-5" (click)="modals.show(2)">Trabaja con nosotros</a>
+      </li>
+      <li><a class="text-600 cursor-pointer line-height-3 lg:mr-5" (click)="modals.show(3)">Preguntas frecuentes</a>
+      </li>
     </ul>
     <div class="flex align-items-center justify-content-center mb-5 ">
       <a routerLink="/index" pRipple
@@ -19,4 +21,7 @@
     </div>
   </div>
 </div>
-<app-modals></app-modals>
+<div>
+  <app-modals #modals></app-modals>
+
+</div>

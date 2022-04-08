@@ -14,8 +14,5 @@ export class FooterComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  show(arg: number) {
-
-  }
 
 }
