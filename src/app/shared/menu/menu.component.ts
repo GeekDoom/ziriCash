@@ -42,6 +42,14 @@ export class MenuComponent implements OnInit {
           }
 
         ];
+        this.buttonsLabel = [
+          {
+            label: 'Login',
+            route: '/auth',
+            icon: 'pi pi-fw pi-sign-in'
+          }
+
+        ]
         break;
       case '/admin/users':
       case '/admin/reports':
@@ -120,26 +128,30 @@ export class MenuComponent implements OnInit {
           }
 
         ];
+        this.buttonsLabel = [
+          {
+            label: 'Login',
+            route: '/index',
+            icon: 'pi pi-fw pi-sign-in'
+          }
+
+        ]
         break;
+
     }
     if (this.router.url === '/index') {
-      this.buttonsLabel = [
-        {
-          label: 'Login',
-          route: '/auth',
-          icon: 'pi pi-fw pi-sign-in'
-        }
-
-      ]
-    } else {
+      return
+    } else if (this.router.url !== '/auth/login' && this.router.url !== '/auth/register') {
       this.buttonsLabel = [
         {
           label: 'Logout',
           route: '/index',
           icon: 'pi pi-fw pi-sign-out'
         }
+
       ]
     }
+
 
   }
 
