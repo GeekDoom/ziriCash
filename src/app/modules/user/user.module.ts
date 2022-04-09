@@ -6,18 +6,23 @@ import { WalletComponent } from './wallet/wallet.component';
 import { ExchangeComponent } from './exchange/exchange.component';
 import { GenerateComponent } from './generate/generate.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { WalletMovementsComponent } from './wallet-movements/wallet-movements.component';
+import { PrimeNgModule } from 'src/app/prime-ng/prime-ng.module';
 
 
 @NgModule({
   declarations: [
     WalletComponent,
     ExchangeComponent,
-    GenerateComponent
+    GenerateComponent,
+    WalletMovementsComponent,
+
   ],
   imports: [
     CommonModule,
     UserRoutingModule,
-    SharedModule
+    SharedModule,
+    PrimeNgModule
   ]
 })
 export class UserModule { }

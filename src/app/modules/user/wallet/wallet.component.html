@@ -1,1 +1,35 @@
 <app-menu></app-menu>
+<div class="card grid py-8">
+  <div class="md:col-9 px-8">
+    <p-tabView headerStyleClass="justify-self-center" [(activeIndex)]="activeIndex1">
+      <p-tabPanel header="Ver saldo" [disabled]="true">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+          ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+          velit esse cillum dolore eu fugiat nulla pariatur.
+          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+      </p-tabPanel>
+      <p-tabPanel header="Transferir" [disabled]="true">
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
+          aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+          architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit
+          aut fugit, sed quia consequuntur magni dolores eos qui ratione
+          voluptatem sequi nesciunt. Consectetur, adipisci velit, sed quia non numquam eius modi.
+        </p>
+      </p-tabPanel>
+    </p-tabView>
+  </div>
+  <div class="md:col-3">
+    <div class="grid md:px-0 px-8 py-4">
+      <div class="md:col-12 px-3 py-1">
+        <button pButton pRipple (click)="activeIndex1 = 0" label="Ver saldo" class="w-full p-button-help"
+          icon="pi pi-money-bill"></button>
+      </div>
+      <div class="md:col-12 px-3 py-1">
+        <button pButton pRipple (click)="activeIndex1 = 1" label="Transferir" class="w-full p-button-help "
+          icon="pi pi-send"></button>
+      </div>
+    </div>
+  </div>
+</div>
