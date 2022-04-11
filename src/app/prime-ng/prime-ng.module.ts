@@ -8,9 +8,10 @@ import { ImageModule } from 'primeng/image';
 import { InputTextModule } from 'primeng/inputtext';
 import { MenubarModule } from 'primeng/menubar';
 import { MultiSelectModule } from 'primeng/multiselect';
-import { TabViewModule } from 'primeng/tabview';
+import { PasswordModule } from 'primeng/password';
 import { RippleModule } from 'primeng/ripple';
-
+import { TableModule } from 'primeng/table';
+import { TabViewModule } from 'primeng/tabview';
 
 @NgModule({
   exports: [
@@ -23,8 +24,11 @@ import { RippleModule } from 'primeng/ripple';
     InputTextModule,
     MenubarModule,
     MultiSelectModule,
-    TabViewModule,
+    PasswordModule,
     RippleModule,
+    TableModule,
+    TabViewModule,
+
 
 
 
