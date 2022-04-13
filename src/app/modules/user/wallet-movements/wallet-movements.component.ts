@@ -17,6 +17,9 @@ import { TablesService } from '../../../shared/services/tables.service';
                 top: 0px;
             }
         }
+        .layout-news-active :host ::ng-deep .p-datatable tr > th {
+            top: 7rem;
+        }
       `
   ]
 })
