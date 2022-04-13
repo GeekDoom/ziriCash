@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Movements } from '../../modules/interfaces/tables';
+import { TablesService } from '../services/tables.service';
 
 @Component({
   selector: 'app-tables',
@@ -8,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TablesComponent implements OnInit {
 
-  constructor() { }
+  movements: Movements[] = [];
+
+  constructor(
+    private ts: TablesService
+  ) { }
 
   ngOnInit(): void {
+
+    this.ts.getMovements()
+      .subscribe(mov => {
+        console.log(mov)
+        this.movements = mov
+      })
   }
 
 }

@@ -10,7 +10,6 @@ import { ModalsService } from '../services/modals.service';
 })
 export class ModalsComponent implements OnInit {
 
-  msg = document.createElement('div');
   content: any = {};
   display: boolean = false;
   constructor(private ms: ModalsService) { }
