@@ -5,7 +5,6 @@ import { CardsComponent } from './cards/cards.component';
 import { FooterComponent } from './footer/footer.component';
 import { MenuComponent } from './menu/menu.component';
 import { ModalsComponent } from './modals/modals.component';
-import { TablesComponent } from './tables/tables.component';
 import { TabsComponent } from './tabs/tabs.component';
 import { PrimeNgModule } from '../prime-ng/prime-ng.module';
 
@@ -17,7 +16,6 @@ import { PrimeNgModule } from '../prime-ng/prime-ng.module';
     FooterComponent,
     MenuComponent,
     ModalsComponent,
-    TablesComponent,
     TabsComponent
   ],
   imports: [
@@ -30,7 +28,6 @@ import { PrimeNgModule } from '../prime-ng/prime-ng.module';
     FooterComponent,
     MenuComponent,
     ModalsComponent,
-    TablesComponent,
     TabsComponent
   ]
 })

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Movements } from '../../interfaces/tables';
+import { TablesService } from '../../../shared/services/tables.service';
+
 
 @Component({
   selector: 'app-wallet-movements',
@@ -7,10 +10,15 @@ import { Component, OnInit } from '@angular/core';
   ]
 })
 export class WalletMovementsComponent implements OnInit {
+  movements: Movements[] = [];
 
-  constructor() { }
+  constructor(private ts: TablesService) { }
 
   ngOnInit(): void {
+    this.ts.getMovements()
+      .subscribe(mov => {
+        this.movements = mov
+      })
   }
 
 }
