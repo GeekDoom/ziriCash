@@ -1,1 +1,65 @@
 <app-menu></app-menu>
+
+<div class="px-8 md:mx-8 py-8">
+  <p-panel header="Exchange">
+    <div class="grid p-fluid">
+      <div class="col-12 md:col-6">
+        <p-dropdown [options]="toc!" [(ngModel)]="selectedToc" optionLabel="name" optionValue="code">
+        </p-dropdown>
+      </div>
+      <div class="col-12 md:col-6">
+        <div class="p-inputgroup">
+          <textarea pInputTextarea [rows]="1" [cols]="30"></textarea>
+        </div>
+      </div>
+
+      <div class="col-12 md:col-6">
+        <div class="p-inputgroup">
+          <span class="p-inputgroup-addon"><i class="pi pi-dollar"></i></span>
+          <input type="text" pInputText placeholder="Monto">
+          <span class="p-inputgroup-addon">.00</span>
+        </div>
+      </div>
+      <div class="col-12 md:col-6">
+        <div class="p-inputgroup">
+          <button class="min-w-full" pButton label="Publicar"></button>
+        </div>
+      </div>
+    </div>
+  </p-panel>
+</div>
+
+<!--Table-->
+<div class="col"></div>
+<div class="container px-8">
+  <div class="card">
+    <div class="mb-3">
+      <p-button type="button" icon="pi pi-chevron-left" (click)="prev()" [disabled]="isFirstPage()"
+        styleClass="p-button-text"></p-button>
+      <p-button type="button" icon="pi pi-refresh" (click)="reset()" styleClass="p-button-text"></p-button>
+      <p-button type="button" icon="pi pi-chevron-right" (click)="next()" [disabled]="isLastPage()"
+        styleClass="p-button-text"></p-button>
+    </div>
+    <p-table #dt [value]="dashboard!" responsiveLayout="scroll" [paginator]="true" [rows]="rows" class="pt-8"
+      [scrollable]="true" styleClass="p-datatable-striped " [rowsPerPageOptions]="[10,25,50,100]"
+      currentPageReportTemplate="Showing {first} to {last} of {totalRecords}
+      entries" [showCurrentPageReport]="true" [(first)]="first">
+      <ng-template pTemplate="header">
+        <tr>
+          <th style="min-width:250px">Name</th>
+          <th style="min-width:250px">Type of change</th>
+          <th style="min-width:250px">Description</th>
+          <th style="min-width:250px">Amount</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-dashboard class="flex flex-wrap">
+        <tr>
+          <td style="min-width:250px">{{dashboard.full_name}}</td>
+          <td style="min-width:250px">{{dashboard.toc}}</td>
+          <td style="min-width:250px">{{dashboard.desc}}</td>
+          <td style="min-width:250px">{{dashboard.amount | currency: 'Żrc '}}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</div>
