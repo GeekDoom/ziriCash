@@ -19,11 +19,13 @@ export class ExchangeComponent implements OnInit {
   rows = 10;
   constructor(private ts: TablesService) {
     this.toc = [
-      {name:'Transferencia Bancaria', code:'BT'},
-      {name:'Paypal', code:'PY'},
-      {name:'Crypto', code:'CR'}
+      { name: 'Transferencia Bancaria', code: 'BT' },
+      { name: 'Paypal', code: 'PY' },
+      { name: 'Zinli', code: 'ZI' },
+      { name: 'Mercado Pago', code: 'MP' },
+      { name: 'Crypto', code: 'CR' }
     ];
-   }
+  }
 
   ngOnInit(): void {
 
