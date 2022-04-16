@@ -4,8 +4,23 @@ html,
 body {
   background-color: var(--surface-b);
   font-family: var(--font-family);
+  
 }
 
 .text-layout-color {
   color: var(--text-color)
+}
+
+body::-webkit-scrollbar {
+  width: 12px;               /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--surface-a);        /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--surface-b);    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+  border: 3px solid var(--surface-a); /* border radius/* creates padding around scroll thumb */
 }

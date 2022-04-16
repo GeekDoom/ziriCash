@@ -11,7 +11,7 @@ export class TablesService {
   constructor(private http: HttpClient) { }
   getMovements(): Observable<Movements[]> {
     return this.http.get<Movements[]>('assets/movements.json')
-              .pipe(map(mov => mov))
+      .pipe(map(mov => mov))
   }
 
 }

@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   ]
 })
 export class WalletComponent implements OnInit {
+  saldo = 55
+
 
   constructor() { }
 

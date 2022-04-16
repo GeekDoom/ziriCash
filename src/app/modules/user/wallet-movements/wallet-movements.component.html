@@ -26,8 +26,13 @@
         <tr>
           <td style="min-width:250px">{{movement.sender}}</td>
           <td style="min-width:250px">{{movement.receives}}</td>
-          <td style="min-width:250px">{{movement.movement}}</td>
-          <td style="min-width:250px">{{movement.amount | currency: 'USD'}}</td>
+          <td style="min-width:250px" *ngIf="movement.movement === 1"><button pButton
+              class="p-button-rounded p-button-success pointer-events-none min-width-150px" style="min-width: 100px;"
+              label="Receive"></button></td>
+          <td style="min-width:250px" *ngIf="movement.movement === 0"><button pButton
+              class="p-button-rounded p-button-danger pointer-events-none min-width-150px" style="min-width: 100px;"
+              label="Send"></button></td>
+          <td style="min-width:250px">{{movement.amount | currency: 'Ż '}}</td>
           <td style="min-width:250px">{{movement.date}}</td>
         </tr>
       </ng-template>

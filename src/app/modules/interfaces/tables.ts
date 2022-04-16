@@ -1,7 +1,7 @@
 export interface Movements {
     sender?: string;
     receives?: string;
-    movement?: any;
+    movement?: number;
     amount?: number;
     date?: Date;
 }
