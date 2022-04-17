@@ -17,11 +17,16 @@
       entries" [showCurrentPageReport]="true" [(first)]="first">
       <ng-template pTemplate="header">
         <tr>
-          <th style="min-width:250px">Sender</th>
-          <th style="min-width:250px">Receives</th>
-          <th style="min-width:250px">Movement</th>
-          <th style="min-width:250px">Amount</th>
-          <th style="min-width:250px">Date</th>
+          <th style="min-width:250px" pSortableColumn="sender">Sender <p-sortIcon field="sender"></p-sortIcon>
+          </th>
+          <th style="min-width:250px" pSortableColumn="receives">Receives <p-sortIcon field="receives"></p-sortIcon>
+          </th>
+          <th style="min-width:250px" pSortableColumn="movement">Movement <p-sortIcon field="movement"></p-sortIcon>
+          </th>
+          <th style="min-width:250px" pSortableColumn="amount">Amount <p-sortIcon field="amount"></p-sortIcon>
+          </th>
+          <th style="min-width:250px" pSortableColumn="date">Date <p-sortIcon field="date"></p-sortIcon>
+          </th>
         </tr>
       </ng-template>
       <ng-template pTemplate="body" let-movement class="flex flex-wrap">
