@@ -1,34 +1,37 @@
 <app-menu></app-menu>
+<div class="grid">
+  <div class="col-3"></div>
+  <div class="py-8 md:col-6 col-12">
+    <p-panel header="Exchange">
+      <div class="grid p-fluid">
+        <div class="col-12 md:col-6">
+          <p-dropdown [options]="toc!" [(ngModel)]="selectedToc" optionLabel="name" optionValue="code">
+          </p-dropdown>
+        </div>
+        <div class="col-12 md:col-6">
+          <div class="p-inputgroup">
+            <textarea pInputTextarea [rows]="1" [cols]="30" placeholder="Ej. Numero de contacto"></textarea>
+          </div>
+        </div>
 
-<div class="px-8 md:mx-8 py-8">
-  <p-panel header="Exchange">
-    <div class="grid p-fluid">
-      <div class="col-12 md:col-6">
-        <p-dropdown [options]="toc!" [(ngModel)]="selectedToc" optionLabel="name" optionValue="code">
-        </p-dropdown>
-      </div>
-      <div class="col-12 md:col-6">
-        <div class="p-inputgroup">
-          <textarea pInputTextarea [rows]="1" [cols]="30" placeholder="Ej. Numero de contacto"></textarea>
+        <div class="col-12 md:col-6">
+          <div class="p-inputgroup">
+            <input type="text" pInputText placeholder="Monto">
+          </div>
+        </div>
+        <div class="col-12 md:col-6">
+          <div class="p-inputgroup">
+            <button class="min-w-full" pButton label="Publicar"></button>
+          </div>
         </div>
       </div>
-
-      <div class="col-12 md:col-6">
-        <div class="p-inputgroup">
-          <input type="text" pInputText placeholder="Monto">
-        </div>
-      </div>
-      <div class="col-12 md:col-6">
-        <div class="p-inputgroup">
-          <button class="min-w-full" pButton label="Publicar"></button>
-        </div>
-      </div>
-    </div>
-  </p-panel>
+    </p-panel>
+  </div>
+  <div class="col-3"></div>
 </div>
 
 <!--Table-->
-<div class="col"></div>
+<div class="grid"></div>
 <div class="container px-8">
   <div class="card">
     <div class="mb-3">
@@ -38,7 +41,7 @@
       <p-button type="button" icon="pi pi-chevron-right" (click)="next()" [disabled]="isLastPage()"
         styleClass="p-button-text"></p-button>
     </div>
-    <p-table #dt [value]="dashboard!" responsiveLayout="scroll" [paginator]="true" [rows]="rows" class="pt-8"
+    <p-table #dt [value]="dashboard!" responsiveLayout="scroll" [paginator]="true" [rows]="rows" class="py-8"
       [scrollable]="true" styleClass="p-datatable-striped " [rowsPerPageOptions]="[10,25,50,100]"
       currentPageReportTemplate="Showing {first} to {last} of {totalRecords}
       entries" [showCurrentPageReport]="true" [(first)]="first">
