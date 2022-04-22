@@ -1,4 +1,4 @@
-import { Component, OnInit, } from '@angular/core';
+import { Component, OnInit, Renderer2, } from '@angular/core';
 import { ModalsService } from '../services/modals.service';
 
 
@@ -12,7 +12,10 @@ export class ModalsComponent implements OnInit {
 
   content: any = {};
   display: boolean = false;
-  constructor(private ms: ModalsService) { }
+  constructor(
+    private ms: ModalsService,
+    private r2: Renderer2,
+  ) { }
 
   ngOnInit(): void {
 

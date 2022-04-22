@@ -37,10 +37,6 @@ import { TabViewModule } from 'primeng/tabview';
     RippleModule,
     TableModule,
     TabViewModule,
-
-
-
-
   ]
 })
 export class PrimeNgModule { }
