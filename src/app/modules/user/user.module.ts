@@ -8,6 +8,7 @@ import { GenerateComponent } from './generate/generate.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { WalletMovementsComponent } from './wallet-movements/wallet-movements.component';
 import { PrimeNgModule } from 'src/app/prime-ng/prime-ng.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { PrimeNgModule } from 'src/app/prime-ng/prime-ng.module';
   ],
   imports: [
     CommonModule,
+    ReactiveFormsModule,
     UserRoutingModule,
     SharedModule,
     PrimeNgModule

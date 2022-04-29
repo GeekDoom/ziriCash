@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 import { SortEvent } from 'primeng/api';
 import { TablesService } from 'src/app/shared/services/tables.service';
 import { typeOc } from '../../interfaces/selects';
@@ -18,15 +19,28 @@ export class ExchangeComponent implements OnInit {
   dashboard?: Dashboard[]
   first = 0;
   rows = 10;
-  constructor(private ts: TablesService) {
+
+  exForm = this.fb.group({
+    toc: [],
+    desc: ['', Validators.required],
+    amount: [, Validators.required],
+  })
+
+
+
+  constructor(
+    private ts: TablesService,
+    private fb: FormBuilder
+  ) {
     this.toc = [
-      { name: 'Transferencia Bancaria', code: 'BTS' },
+      { name: 'Bank Transfer', code: 'BTS' },
       { name: 'Paypal', code: 'PAY' },
       { name: 'Zinli', code: 'ZIL' },
       { name: 'Mercado Pago', code: 'MRP' },
       { name: 'Bitcoin', code: 'BTC' },
       { name: 'Ethereum', code: 'ETH' },
     ];
+
   }
 
   ngOnInit(): void {
@@ -78,4 +92,9 @@ export class ExchangeComponent implements OnInit {
       return (event.order! * result);
     });
   }
+
+  postData() {
+    
+  }
+
 }

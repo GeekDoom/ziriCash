@@ -12,6 +12,7 @@ export class ModalsComponent implements OnInit {
 
   content: any = {};
   display: boolean = false;
+  static show: any;
   constructor(
     private ms: ModalsService,
     private r2: Renderer2,
@@ -25,9 +26,7 @@ export class ModalsComponent implements OnInit {
       case 1:
         this.content = {
           title: 'Elige el plan ideal para ti.',
-
           msg: 'Prueba 1'
-
         };
         this.display = true
         break;

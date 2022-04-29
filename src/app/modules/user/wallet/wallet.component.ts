@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-wallet',
@@ -9,8 +10,16 @@ import { Component, OnInit } from '@angular/core';
 export class WalletComponent implements OnInit {
   saldo = 55
 
+  walletForm: FormGroup = this.fb.group({
+    email: ['', Validators.required],
+    amount: [, Validators.required],
+    name: [{value:'', disabled: true},],
+  })
 
-  constructor() { }
+
+  constructor(
+    private fb: FormBuilder,
+  ) { }
 
   ngOnInit(): void {
   }

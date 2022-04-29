@@ -1,5 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { ModalsService } from '../services/modals.service';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-footer',
@@ -10,7 +9,7 @@ import { ModalsService } from '../services/modals.service';
 export class FooterComponent implements OnInit {
 
 
-  constructor(private ms: ModalsService) { }
+  constructor() { }
 
   ngOnInit(): void {
   }

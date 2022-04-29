@@ -1,6 +1,6 @@
 <app-menu></app-menu>
-<div class="card grid py-8">
-  <div class="md:col-9 col-12 md:px-8">
+<div class="card grid py-8 lg:px-8">
+  <div class="md:col-9 col-12">
     <p-tabView headerStyleClass="justify-self-center" [(activeIndex)]="activeIndex1">
       <p-tabPanel header="Ver saldo" [disabled]="true">
         <div class="">
@@ -13,47 +13,53 @@
         </div>
       </p-tabPanel>
       <p-tabPanel header="Transferir" [disabled]="true">
-        <div class="col-12">
-          <p class="">Transferencia a terceros</p>
-          <div class="grid p-fluid">
-            <div class="col-12 md:col-4">
-              <div class="p-inputgroup">
-                <span class="p-inputgroup-addon"><i class="pi pi-envelope"></i></span>
-                <input type="text" pInputText placeholder="E-mail">
+        <form autocomplete="off" [formGroup]="walletForm">
+          <div class="col-12">
+            <p class="">Transferencia a terceros</p>
+            <div class="grid p-fluid">
+              <div class="col-12 md:col-4">
+                <div class="p-inputgroup">
+                  <span class="p-inputgroup-addon"><i class="pi pi-envelope"></i></span>
+                  <input type="text" pInputText placeholder="E-mail" formControlName="email">
+                </div>
               </div>
-            </div>
 
-            <div class="col-12 md:col-4">
-              <div class="p-inputgroup">
-                <span class="p-inputgroup-addon"><i class="pi pi-dollar"></i></span>
-                <input type="text" pInputText placeholder="Monto">
-                <span class="p-inputgroup-addon">.00</span>
+              <div class="col-12 md:col-4">
+                <div class="p-inputgroup">
+                  <span class="p-inputgroup-addon"><i class="pi pi-dollar"></i></span>
+                  <input type="text" pInputText placeholder="Monto" formControlName="amount">
+                  <span class="p-inputgroup-addon">.00</span>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="md:col-6 col md:pt-3">
-          <div class="p-inputgroup">
-            <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
-            <input type="text" [disabled]="true" pInputText placeholder="nombre del usuario">
+          <div class="md:col-6 col md:pt-3">
+            <div class="p-inputgroup">
+              <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+              <input type="text" pInputText placeholder="Nombre del usuario" formControlName="name">
+            </div>
           </div>
-        </div>
-        <div class="col md:pt-4">
-          <p-button icon="pi pi-send" class="flex justify-content-end md:pt-7 pt-5" label="Enviar"></p-button>
-        </div>
+          <div class="col md:pt-4">
+            <p-button icon="pi pi-send" class="flex justify-content-end md:pt-7 pt-5" label="Enviar"></p-button>
+          </div>
+        </form>
       </p-tabPanel>
     </p-tabView>
   </div>
   <div class="md:col-3 col-12 md:pt-5">
-    <div class="grid md:px-0 md:px-8 py-4">
-      <div class="md:col-12 col-6 px-3 py-1">
+    <div class="grid py-4">
+      <div class="md:col-12 col-6 md:px-3 py-1">
         <button pButton pRipple (click)="activeIndex1 = 0" label="Ver saldo" class="w-full p-button-help"
           icon="pi pi-money-bill"></button>
       </div>
-      <div class="md:col-12 col-6 px-3 py-1">
+      <div class="md:col-12 col-6 md:px-3 py-1">
         <button pButton pRipple (click)="activeIndex1 = 1" label="Transferir" class="w-full p-button-help "
           icon="pi pi-send"></button>
       </div>
     </div>
   </div>
 </div>
+<!-- <div class="col">
+  <h3 class="text-layout-color">Formulario:</h3>
+  <pre class="text-layout-color">{{walletForm.value | json}}</pre>
+</div> -->

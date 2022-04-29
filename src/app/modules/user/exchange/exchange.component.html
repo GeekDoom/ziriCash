@@ -3,32 +3,42 @@
   <div class="col-3"></div>
   <div class="py-8 md:col-6 col-12">
     <p-panel header="Exchange">
-      <div class="grid p-fluid">
-        <div class="col-12 md:col-6">
-          <p-dropdown [options]="toc!" [(ngModel)]="selectedToc" optionLabel="name" optionValue="code">
-          </p-dropdown>
-        </div>
-        <div class="col-12 md:col-6">
-          <div class="p-inputgroup">
-            <textarea pInputTextarea [rows]="1" [cols]="30" placeholder="Ej. Numero de contacto"></textarea>
+      <form autocomplete="off" [formGroup]="exForm">
+        <div class="grid p-fluid">
+          <div class="col-12 md:col-6">
+            <p-dropdown [options]="toc!" formControlName="toc" optionLabel="name" optionValue="code" selectedToc="code"
+              placeholder="--Select type of change--">
+            </p-dropdown>
           </div>
-        </div>
+          <div class="col-12 md:col-6">
+            <div class="p-inputgroup">
+              <textarea pInputTextarea formControlName="desc" [rows]="1" [cols]="30"
+                placeholder="Ej. Numero de contacto"></textarea>
+            </div>
+          </div>
 
-        <div class="col-12 md:col-6">
-          <div class="p-inputgroup">
-            <input type="text" pInputText placeholder="Monto">
+          <div class="col-12 md:col-6">
+            <div class="p-inputgroup">
+              <input type="number" pInputText formControlName="amount" placeholder="Monto">
+            </div>
+          </div>
+          <div class="col-12 md:col-6">
+            <div class="p-inputgroup">
+              <button class="min-w-full" pButton label="Publicar"></button>
+            </div>
           </div>
         </div>
-        <div class="col-12 md:col-6">
-          <div class="p-inputgroup">
-            <button class="min-w-full" pButton label="Publicar"></button>
-          </div>
-        </div>
-      </div>
+      </form>
     </p-panel>
   </div>
   <div class="col-3"></div>
+  <!-- <div class="col">
+    <h3 class="text-layout-color">Formulario:</h3>
+    <pre class="text-layout-color">{{exForm.value | json}}</pre>
+  </div> -->
 </div>
+
+
 
 <!--Table-->
 <div class="grid"></div>

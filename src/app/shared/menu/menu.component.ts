@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MenuItem } from 'primeng/api';
 import { ButtonLabel } from 'src/app/core/interfaces/buttonLabel';
+import { ModalsComponent } from '../modals/modals.component';
 
 
 
@@ -12,7 +13,7 @@ import { ButtonLabel } from 'src/app/core/interfaces/buttonLabel';
   ]
 })
 export class MenuComponent implements OnInit {
-
+  @ViewChild('modals') modals: ModalsComponent | undefined;
 
   items: MenuItem[] = [];
   buttonsLabel: ButtonLabel[] = []
@@ -107,8 +108,15 @@ export class MenuComponent implements OnInit {
             icon: 'pi pi-percentage',
             routerLink: '/user/generate',
             styleClass: 'md:mr-3'
+          },
+          {
+            label: 'Perfil',
+            icon: 'pi pi-user',
+            styleClass: 'md:mr-3',
+            command: () => {
+              (this.modals?.show(1))
+            }
           }
-
         ];
         break;
       case '/auth/login':
@@ -152,7 +160,5 @@ export class MenuComponent implements OnInit {
       ]
     }
 
-
   }
-
 }
