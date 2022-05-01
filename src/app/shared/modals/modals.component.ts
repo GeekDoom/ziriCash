@@ -24,10 +24,11 @@ export class ModalsComponent implements OnInit {
   show(arg: number) {
     switch (arg) {
       case 1:
-        this.content = {
-          title: 'Elige el plan ideal para ti.',
-          msg: 'Prueba 1'
-        };
+        this.content = 
+          {
+            title: 'Elige el plan ideal para ti.',
+            msg: 'Prueba 1'
+          };
         this.display = true
         break;
       case 2:
