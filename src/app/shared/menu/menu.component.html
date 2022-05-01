@@ -1,11 +1,10 @@
-<p-menubar [model]="items">
+<p-menubar [model]="item">
   <ng-template pTemplate="start">
     <a routerLink="/index">
       <p-image src="assets/logos/Logo-Ziri-(Propuesta).png" class="mr-5" alt="Logo" width="150"></p-image>
     </a>
   </ng-template>
   <ng-template pTemplate="end">
-
     <button pRipple *ngFor="let button of buttonsLabel" pButton label="{{button.label}}" icon="{{button.icon}}"
       iconPos="right" routerLink="{{button.route}}"></button>
   </ng-template>

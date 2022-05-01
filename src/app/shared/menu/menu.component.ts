@@ -15,31 +15,29 @@ import { ModalsComponent } from '../modals/modals.component';
 export class MenuComponent implements OnInit {
   @ViewChild('modals') modals: ModalsComponent | undefined;
 
-  items: MenuItem[] = [];
+  item: MenuItem[] = [];
   buttonsLabel: ButtonLabel[] = []
 
   url = this.router.url
 
   constructor(
-    private ar: ActivatedRoute,
     private router: Router,) { }
 
   ngOnInit() {
     switch (this.url) {
       case '/index':
-        this.items = [
+        this.item = [
           {
             label: 'User',
             icon: 'pi pi-fw pi-users',
             routerLink: '/user',
             styleClass: 'md:mr-3'
-
           },
           {
             label: 'Admin',
             icon: 'pi pi-fw pi-user',
             routerLink: '/admin',
-
+            styleClass: 'md:mr-3'
           }
 
         ];
@@ -50,13 +48,13 @@ export class MenuComponent implements OnInit {
             icon: 'pi pi-fw pi-sign-in'
           }
 
-        ]
+        ];
         break;
       case '/admin/users':
       case '/admin/reports':
       case '/admin/publications':
       case '/admin/transactions':
-        this.items = [
+        this.item = [
           {
             label: 'Users',
             icon: 'pi pi-fw pi-users',
@@ -89,7 +87,7 @@ export class MenuComponent implements OnInit {
       case '/user/wallet':
       case '/user/exchange':
       case '/user/generate':
-        this.items = [
+        this.item = [
           {
             label: 'Wallet',
             icon: 'pi pi-fw pi-wallet',
@@ -121,7 +119,7 @@ export class MenuComponent implements OnInit {
         break;
       case '/auth/login':
       case '/auth/register':
-        this.items = [
+        this.item = [
           {
             label: 'Login',
             icon: 'pi pi-fw pi-sign-in',
@@ -143,9 +141,8 @@ export class MenuComponent implements OnInit {
             icon: 'pi pi-fw pi-sign-in'
           }
 
-        ]
+        ];
         break;
-
     }
     if (this.router.url === '/index') {
       return
@@ -157,7 +154,7 @@ export class MenuComponent implements OnInit {
           icon: 'pi pi-fw pi-sign-out'
         }
 
-      ]
+      ];
     }
 
   }
