@@ -1,5 +1,9 @@
-<p-dialog #modals [modal]="true" [keepInViewport]="true" header="{{content.title}}" [dismissableMask]="true"
+<p-dialog #modals [modal]="true" header="{{content.title}}" [keepInViewport]="true" [dismissableMask]="true"
   [(visible)]="display" [closeOnEscape]="true" [breakpoints]="{'960px': '75vw', '640px': '100vw'}"
   [style]="{width: '50vw'}" *ngIf="content !== {}">
-  {{content?.msg}}
+  {{content.msg}}
+  <ng-template *cdkPortal>
+    Works portal
+  </ng-template>
+
 </p-dialog>

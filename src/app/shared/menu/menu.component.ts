@@ -112,7 +112,7 @@ export class MenuComponent implements OnInit {
             icon: 'pi pi-user',
             styleClass: 'md:mr-3',
             command: () => {
-              (this.modals?.show(1))
+              (this.modals!.show(1))
             }
           }
         ];

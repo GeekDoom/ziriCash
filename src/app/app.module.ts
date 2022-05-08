@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RippleModule } from 'primeng/ripple';
 import { MovementPipe } from './core/pipes/movement.pipe';
+import { PortalModule } from '@angular/cdk/portal';
 
 
 @NgModule({
@@ -21,7 +22,9 @@ import { MovementPipe } from './core/pipes/movement.pipe';
     HttpClientModule,
     FormsModule,
     AppRoutingModule,
+    PortalModule,
     RippleModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

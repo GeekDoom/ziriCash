@@ -5,7 +5,7 @@
       <p-tabPanel header="Ver saldo" [disabled]="true">
         <div class="">
           <p class="">Saldo disponible</p>
-          <p class="text-center text-7xl mt-5 mb-5 pt-5 pb-4 text-purple-300">{{saldo | currency: 'Żrc '}}
+          <p class="text-center text-7xl mt-5 mb-5 pt-5 pb-4 text-primary">{{saldo | currency: 'Żrc '}}
           </p>
           <p-button styleClass="p-button-text" icon="pi pi-search" class="flex justify-content-end pt-5"
             label="Ver movimientos" routerLink="/user/movements"></p-button>
@@ -49,12 +49,11 @@
   <div class="md:col-3 col-12 md:pt-5">
     <div class="grid py-4">
       <div class="md:col-12 col-6 md:px-3 py-1">
-        <button pButton pRipple (click)="activeIndex1 = 0" label="Ver saldo" class="w-full p-button-help"
+        <button pButton pRipple (click)="activeIndex1 = 0" label="Ver saldo" class="w-full"
           icon="pi pi-money-bill"></button>
       </div>
       <div class="md:col-12 col-6 md:px-3 py-1">
-        <button pButton pRipple (click)="activeIndex1 = 1" label="Transferir" class="w-full p-button-help "
-          icon="pi pi-send"></button>
+        <button pButton pRipple (click)="activeIndex1 = 1" label="Transferir" class="w-full" icon="pi pi-send"></button>
       </div>
     </div>
   </div>
