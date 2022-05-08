@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MenuItem } from 'primeng/api';
 import { ButtonLabel } from 'src/app/core/interfaces/buttonLabel';
+import { ThemeService } from 'src/app/core/services/theme.service';
 import { ModalsComponent } from '../modals/modals.component';
 
 
@@ -17,11 +18,14 @@ export class MenuComponent implements OnInit {
 
   item: MenuItem[] = [];
   buttonsLabel: ButtonLabel[] = []
-
+  theme: string = "md-light-deeppurple"
+  checked: boolean = false;
   url = this.router.url
 
   constructor(
-    private router: Router,) { }
+    private router: Router,
+    private themeService: ThemeService
+  ) { }
 
   ngOnInit() {
     switch (this.url) {
@@ -157,5 +161,16 @@ export class MenuComponent implements OnInit {
       ];
     }
 
+  }
+
+
+  changeTheme(checked: boolean) {  
+    if (checked === false) {
+      this.theme = 'md-light-deeppurple';
+      this.themeService.switchTheme(this.theme)
+    } else {
+      this.theme = 'md-dark-deeppurple'
+      this.themeService.switchTheme(this.theme)
+    }
   }
 }

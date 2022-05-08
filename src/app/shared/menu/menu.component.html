@@ -4,9 +4,16 @@
       <p-image src="assets/logos/Logo-Ziri-(Propuesta).png" class="mr-5" alt="Logo" width="150"></p-image>
     </a>
   </ng-template>
+
   <ng-template pTemplate="end">
+    <h5 class="mr-8 -mt-3"><i class="pi pi-sun"></i><span class="text-2xl font-light"> / </span><i
+        class="pi pi-moon"></i></h5>
+    <p-inputSwitch (onChange)="changeTheme(checked)" [(ngModel)]="checked" styleClass="mr-8 ml-1 -mt-8">
+    </p-inputSwitch>
+
     <button pRipple *ngFor="let button of buttonsLabel" pButton label="{{button.label}}" icon="{{button.icon}}"
-      iconPos="right" routerLink="{{button.route}}"></button>
+      iconPos="right" routerLink="{{button.route}}" class="-mt-8"></button>
+
   </ng-template>
 </p-menubar>
 <app-modals #modals></app-modals>

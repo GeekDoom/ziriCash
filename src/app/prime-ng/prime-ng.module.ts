@@ -8,6 +8,7 @@ import { DeferModule } from 'primeng/defer';
 import { DialogModule } from 'primeng/dialog';
 import { DropdownModule } from 'primeng/dropdown';
 import { ImageModule } from 'primeng/image';
+import { InputSwitchModule } from 'primeng/inputswitch';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { InputTextModule } from 'primeng/inputtext';
 import { MenubarModule } from 'primeng/menubar';
@@ -17,6 +18,7 @@ import { PasswordModule } from 'primeng/password';
 import { RippleModule } from 'primeng/ripple';
 import { TableModule } from 'primeng/table';
 import { TabViewModule } from 'primeng/tabview';
+
 
 @NgModule({
   exports: [
@@ -28,6 +30,7 @@ import { TabViewModule } from 'primeng/tabview';
     DropdownModule,
     FormsModule,
     ImageModule,
+    InputSwitchModule,
     InputTextareaModule,
     InputTextModule,
     MenubarModule,
