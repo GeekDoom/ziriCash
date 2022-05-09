@@ -171,7 +171,7 @@ export class MenuComponent implements OnInit {
         {
           label: 'Logout',
           route: '/index',
-          icon: 'pi pi-fw pi-sign-out'
+          icon: 'pi pi-fw pi-sign-out',
         }
 
       ];
