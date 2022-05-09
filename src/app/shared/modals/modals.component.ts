@@ -26,7 +26,6 @@ export class ModalsComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.componentPortal = new ComponentPortal(Portal1Component);
     this.ms.setPortal(this.componentPortal!)
-    console.log(this.componentPortal)
   }
 
   ngOnDestroy(): void {
@@ -34,7 +33,6 @@ export class ModalsComponent implements OnInit, OnDestroy {
  */   }
   show(arg: number) {
     this.componentPortal = new ComponentPortal(Portal1Component);
-    this.ms.setPortal(this.componentPortal)
 
     switch (arg) {
       case 1:

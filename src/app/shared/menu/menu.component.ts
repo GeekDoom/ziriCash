@@ -15,17 +15,21 @@ import { ModalsComponent } from '../modals/modals.component';
 })
 export class MenuComponent implements OnInit {
   @ViewChild('modals') modals: ModalsComponent | undefined;
-
+  @ViewChild('theme') checked!: boolean;
+  
   item: MenuItem[] = [];
-  buttonsLabel: ButtonLabel[] = []
-  theme: string = "md-light-deeppurple"
-  checked: boolean = false;
-  url = this.router.url
+  buttonsLabel: ButtonLabel[] = [];
+  theme: string = "md-light-deeppurple";
+  url = this.router.url;
 
   constructor(
     private router: Router,
     private themeService: ThemeService
-  ) { }
+  ) {
+    if (this.checked = true) {
+      
+    } 
+  }
 
   ngOnInit() {
     switch (this.url) {
@@ -183,7 +187,7 @@ export class MenuComponent implements OnInit {
   changeTheme(checked: boolean) {
     if (!checked) {
       this.theme = 'md-light-deeppurple';
-      this.themeService.switchTheme(this.theme)
+      this.themeService.switchTheme(this.theme);
     } else {
       this.theme = 'md-dark-deeppurple'
       this.themeService.switchTheme(this.theme)

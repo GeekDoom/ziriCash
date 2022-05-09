@@ -4,13 +4,20 @@ import { DOCUMENT } from '@angular/common'
   providedIn: 'root'
 })
 export class ThemeService {
-
-  constructor(@Inject(DOCUMENT) private document: Document) { }
-
-  switchTheme(theme: string) {
+  
+  constructor(@Inject(DOCUMENT) private document: Document) {
     let themeLink = this.document.getElementById('app-theme') as HTMLLinkElement;
-    if (themeLink) {
-      themeLink.href = theme + ".css";
-    }
-  }
+    themeLink.href = localStorage.getItem('Theme')!;
+
+   }
+    
+   switchTheme(theme: string) {
+     let themeLink = this.document.getElementById('app-theme') as HTMLLinkElement;
+     if (themeLink) {
+       themeLink.href = theme + ".css";
+       localStorage.setItem('Theme', theme + '.css');
+       console.log(localStorage)
+     }
+   }
+
 }
