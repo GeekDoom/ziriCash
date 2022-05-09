@@ -6,8 +6,7 @@ import { DOCUMENT } from '@angular/common'
 export class ThemeService {
 
   constructor(@Inject(DOCUMENT) private document: Document) {
-    let themeLink = this.document.getElementById('app-theme') as HTMLLinkElement;
-    themeLink.href = localStorage.getItem('Theme')!;
+
 
   }
 
