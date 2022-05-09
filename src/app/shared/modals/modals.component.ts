@@ -38,7 +38,7 @@ export class ModalsComponent implements OnInit, OnDestroy {
       case 1:
         this.content = {
           title: 'Trabaja con nosotros',
-          msg: this.componentPortal
+          msg: 'hola'
         };
         this.display = true
         break;

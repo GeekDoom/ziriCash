@@ -14,20 +14,17 @@ import { ModalsComponent } from '../modals/modals.component';
   ]
 })
 export class MenuComponent implements OnInit {
-  @ViewChild('modals') modals: ModalsComponent | undefined;
-  @ViewChild('theme') checked!: boolean;
-  
+  @ViewChild('modals') modals: ModalsComponent | undefined;  
   item: MenuItem[] = [];
   buttonsLabel: ButtonLabel[] = [];
   theme: string = "md-light-deeppurple";
   url = this.router.url;
+  checked = false
 
   constructor(
     private router: Router,
     private themeService: ThemeService
-  ) {
-    
-  }
+  ) {}
 
   ngOnInit() {
     switch (this.url) {
