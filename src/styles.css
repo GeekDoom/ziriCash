@@ -4,15 +4,18 @@ html,
 body {
   background-color: var(--surface-b);
   font-family: var(--font-family);
-  
+  scrollbar-width: thin;
 }
 
 .text-layout-color {
   color: var(--text-color)
 }
 
-body::-webkit-scrollbar {
+body::-webkit-scrollbar  {
   width: 12px;               /* width of the entire scrollbar */
+}
+body::-webkit-scrollbar  {
+  scrollbar-width: thin;
 }
 
 body::-webkit-scrollbar-track {
@@ -25,26 +28,32 @@ body::-webkit-scrollbar-thumb{
   border: 1px solid var(--surface-c); /* border radius/* creates padding around scroll thumb */
 }
 
-.p-datatable-wrapper::-webkit-scrollbar {
+.p-datatable-wrapper::-webkit-scrollbar  {
   width: 12px;               /* width of the entire scrollbar */
 }
+.p-datatable-wrapper  {
+  scrollbar-width: thin;
+}
 
-.p-datatable-wrapper::-webkit-scrollbar-track {
+.p-datatable-wrapper::-webkit-scrollbar-track  {
   background: var(--surface-a);        /* color of the tracking area */
 }
-.p-datatable-wrapper::-webkit-scrollbar-thumb{
+.p-datatable-wrapper::-webkit-scrollbar-thumb {
   background-color: var(--surface-d);    /* color of the scroll thumb */
   border-radius: 20px;       /* roundness of the scroll thumb */
   border: 2px solid var(--surface-c); /* border radius/* creates padding around scroll thumb */
 }
-.p-dropdown-items-wrapper::-webkit-scrollbar {
+.p-dropdown-items-wrapper::-webkit-scrollbar  {
   width: 12px;               /* width of the entire scrollbar */
 }
+.p-dropdown-items-wrapper{
+  scrollbar-width: thin;
+}
 
-.p-dropdown-items-wrapper::-webkit-scrollbar-track {
+.p-dropdown-items-wrapper::-webkit-scrollbar-track  {
   background: var(--surface-a);        /* color of the tracking area */
 }
-.p-dropdown-items-wrapper::-webkit-scrollbar-thumb{
+.p-dropdown-items-wrapper::-webkit-scrollbar-thumb {
   background-color: var(--surface-d);    /* color of the scroll thumb */
   border-radius: 20px;       /* roundness of the scroll thumb */
   border: 2px solid var(--surface-c); /* border radius/* creates padding around scroll thumb */

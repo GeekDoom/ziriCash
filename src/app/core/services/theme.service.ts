@@ -7,7 +7,6 @@ export class ThemeService {
 
   constructor(@Inject(DOCUMENT) private document: Document) {
     let themeLink = this.document.getElementById('app-theme') as HTMLLinkElement;
-    console.log(localStorage)
     if (localStorage.getItem('Theme')) {
       themeLink.href = localStorage.getItem('Theme')!;
     }
