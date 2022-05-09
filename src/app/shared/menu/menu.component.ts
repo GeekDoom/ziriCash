@@ -42,8 +42,22 @@ export class MenuComponent implements OnInit {
             icon: 'pi pi-fw pi-user',
             routerLink: '/admin',
             styleClass: 'md:mr-3'
-          }
-
+          },
+          /* {
+            label: 'Theme',
+            items: [
+              {
+                label: 'Light',
+                icon: 'pi pi-sun',
+                styleClass: 'md:mr-3',
+              },
+              {
+                label: 'Night',
+                icon: 'pi pi-moon',
+                styleClass: 'md:mr-3',
+              },
+            ]
+          }, */
         ];
         this.buttonsLabel = [
           {
@@ -51,6 +65,7 @@ export class MenuComponent implements OnInit {
             route: '/auth',
             icon: 'pi pi-fw pi-sign-in'
           }
+
 
         ];
         break;
@@ -83,7 +98,7 @@ export class MenuComponent implements OnInit {
             icon: 'pi pi-fw pi-chart-line',
             routerLink: '/admin/transactions',
             styleClass: 'md:mr-3'
-          }
+          },
 
         ];
         break;
@@ -118,7 +133,7 @@ export class MenuComponent implements OnInit {
             command: () => {
               (this.modals!.show(1))
             }
-          }
+          },
         ];
         break;
       case '/auth/login':
@@ -147,6 +162,7 @@ export class MenuComponent implements OnInit {
 
         ];
         break;
+
     }
     if (this.router.url === '/index') {
       return
@@ -164,8 +180,8 @@ export class MenuComponent implements OnInit {
   }
 
 
-  changeTheme(checked: boolean) {  
-    if (checked === false) {
+  changeTheme(checked: boolean) {
+    if (!checked) {
       this.theme = 'md-light-deeppurple';
       this.themeService.switchTheme(this.theme)
     } else {

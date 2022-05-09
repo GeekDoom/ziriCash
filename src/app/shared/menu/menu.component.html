@@ -1,18 +1,26 @@
 <p-menubar [model]="item">
-  <ng-template pTemplate="start">
+  <ng-template pTemplate="start" class="col">
     <a routerLink="/index">
       <p-image src="assets/logos/Logo-Ziri-(Propuesta).png" class="mr-5" alt="Logo" width="150"></p-image>
     </a>
   </ng-template>
 
   <ng-template pTemplate="end">
-    <h5 class="mr-8 -mt-3"><i class="pi pi-sun"></i><span class="text-2xl font-light"> / </span><i
+    <h5 class="md:mr-8 -mt-3 ml-7 pl-2 flex-nowrap"><i class="pi pi-sun"></i><span class="text-2xl font-light"> / </span><i
         class="pi pi-moon"></i></h5>
-    <p-inputSwitch (onChange)="changeTheme(checked)" [(ngModel)]="checked" styleClass="mr-8 ml-1 -mt-8">
-    </p-inputSwitch>
+    <div class="grid ml-3">
+      <div class="col ml-6">
+        <p-inputSwitch (onChange)="changeTheme(checked)" [(ngModel)]="checked" styleClass="mr-8 ml-1 -mt-8">
+        </p-inputSwitch>
 
-    <button pRipple *ngFor="let button of buttonsLabel" pButton label="{{button.label}}" icon="{{button.icon}}"
-      iconPos="right" routerLink="{{button.route}}" class="-mt-8"></button>
+      </div>
+      <div class="col">
+
+        <button pRipple *ngFor="let button of buttonsLabel" pButton label="{{button.label}}" icon="{{button.icon}}"
+          iconPos="right" routerLink="{{button.route}}" class="lg:-mt-8 ml-5"></button>
+      </div>
+
+    </div>
 
   </ng-template>
 </p-menubar>
