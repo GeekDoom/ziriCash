@@ -26,9 +26,7 @@ export class MenuComponent implements OnInit {
     private router: Router,
     private themeService: ThemeService
   ) {
-    if (this.checked = true) {
-      
-    } 
+    
   }
 
   ngOnInit() {
