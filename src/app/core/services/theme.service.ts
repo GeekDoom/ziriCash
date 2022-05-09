@@ -6,7 +6,11 @@ import { DOCUMENT } from '@angular/common'
 export class ThemeService {
 
   constructor(@Inject(DOCUMENT) private document: Document) {
-
+    let themeLink = this.document.getElementById('app-theme') as HTMLLinkElement;
+    console.log(localStorage)
+    if (localStorage.getItem('Theme')) {
+      themeLink.href = localStorage.getItem('Theme')!;
+    }
 
   }
 
@@ -15,7 +19,6 @@ export class ThemeService {
     if (themeLink) {
       themeLink.href = theme + ".css";
       localStorage.setItem('Theme', theme + '.css');
-      console.log(localStorage)
     }
   }
 
