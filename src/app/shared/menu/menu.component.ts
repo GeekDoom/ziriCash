@@ -46,21 +46,13 @@ export class MenuComponent implements OnInit {
             routerLink: '/admin',
             styleClass: 'md:mr-3'
           },
-          /* {
-            label: 'Theme',
-            items: [
-              {
-                label: 'Light',
-                icon: 'pi pi-sun',
-                styleClass: 'md:mr-3',
-              },
-              {
-                label: 'Night',
-                icon: 'pi pi-moon',
-                styleClass: 'md:mr-3',
-              },
-            ]
-          }, */
+          {
+            label: 'Login',
+            icon: 'pi pi-fw pi-sign-in',
+            routerLink: '/auth',
+            styleClass: 'md:mr-3'
+          },
+
         ];
         this.buttonsLabel = [
           {
@@ -102,11 +94,18 @@ export class MenuComponent implements OnInit {
             routerLink: '/admin/transactions',
             styleClass: 'md:mr-3'
           },
+          {
+            label: 'Logout',
+            icon: 'pi pi-fw pi-power-off',
+            routerLink: '/index',
+            styleClass: 'md:mr-3'
+          },
 
         ];
         break;
 
       case '/user/wallet':
+      case '/user/movements':
       case '/user/exchange':
       case '/user/generate':
         this.item = [
@@ -137,6 +136,12 @@ export class MenuComponent implements OnInit {
               (this.modals!.show(5))
             }
           },
+          {
+            label: 'Logout',
+            icon: 'pi pi-fw pi-power-off',
+            routerLink: '/index',
+            styleClass: 'md:mr-8',
+          },
         ];
         break;
       case '/auth/login':
@@ -151,33 +156,12 @@ export class MenuComponent implements OnInit {
           },
           {
             label: 'Register',
-            icon: 'pi pi-fw pi-sign-out',
+            icon: 'pi pi-fw pi-sign-in',
             routerLink: '/auth/register',
           }
 
         ];
-        this.buttonsLabel = [
-          {
-            label: 'Login',
-            route: '/index',
-            icon: 'pi pi-fw pi-sign-in'
-          }
 
-        ];
-        break;
-
-    }
-    if (this.router.url === '/index') {
-      return
-    } else if (this.router.url !== '/auth/login' && this.router.url !== '/auth/register') {
-      this.buttonsLabel = [
-        {
-          label: 'Logout',
-          route: '/index',
-          icon: 'pi pi-fw pi-sign-out',
-        }
-
-      ];
     }
 
   }
