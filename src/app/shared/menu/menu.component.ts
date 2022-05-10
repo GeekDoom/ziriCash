@@ -186,11 +186,9 @@ export class MenuComponent implements OnInit {
     if (!checked) {
       this.theme = 'md-light-deeppurple';
       this.themeService.switchTheme(this.theme);
-      console.log(checked)
     } else {
       this.theme = 'md-dark-deeppurple'
       this.themeService.switchTheme(this.theme)
-      console.log(checked)
 
     }
   }
