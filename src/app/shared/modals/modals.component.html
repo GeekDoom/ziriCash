@@ -1,9 +1,265 @@
-<p-dialog #modals [modal]="true" header="{{content.title}}" [keepInViewport]="true" [dismissableMask]="true"
+<!--MODAL-->
+<p-dialog header="Conocer más" [modal]="true" [closable]="true" [keepInViewport]="true" [dismissableMask]="true"
   [(visible)]="display" [closeOnEscape]="true" [breakpoints]="{'960px': '75vw', '640px': '100vw'}"
-  [style]="{width: '50vw'}" *ngIf="content !== {}">
-  {{content.msg}}
-  <ng-template *cdkPortal>
-    Works portal
-  </ng-template>
+  [style]="{width: '30vw'}">
+  <span class="text-primary text-5xl font-bold">Ziri Cash</span>
+  <p class="font-light text-xl text-justify line-height-3">Ziri Cash es una moneda propia. La utilizamos para
+    facilitar y resguardar las transacciones entre usuarios
+    de nuestra plataforma.
+    <br>
+    <br>
+    Al ser solo de uso interno, quiere decir que no esta
+    hecha para hacer pagos en tiendas, ni
+    establecimientos. Su uso se encuentra solo dentro de
+    nuestra plataforma.
+    <br>
+    <br>
+    Con Ziri Cash puedes invertir, ahorrar y enviar dinero
+    cuando quieras.
+    <br>
+    <br>
+    <br>
+  </p>
+  <span class="text-primary text-3xl font-bold">Cómo Funciona</span>
+  <p class="font-light text-xl text-justify line-height-3">
+    - Primero debes intercambiar tu dinero por Ziri Cash.
+    <br>
+    <br>
+    - Luego que ya tengas tus Ziri Cash puedes realizar cualquiera de las
+    funciones disponibles en la plataforma.
+    <br>
+    <br>
+    - Cuando quieras retirar tus fondos debes realizar el intercambio de manejar
+    inversa. Es decir, entregas tus Ziri Cash y recibes dinero.
+  </p>
+</p-dialog>
+<!--TODO: MODAL 1-->
+<p-dialog position="top" header="Programa de inversión" [modal]="true" [closable]="true" [keepInViewport]="true"
+  [dismissableMask]="true" [(visible)]="display1" [closeOnEscape]="true"
+  [breakpoints]="{'960px': '75vw', '640px': '100vw'}" [style]="{width: '50vw'}">
+  <span class="text-primary text-5xl font-bold">Elige el plan ideal para tí</span>
+  <div class=" grid pt-8">
+    <p-card class="lg:col-4 col-12" header="Zirium 1.0">
+      <p class="text-6xl text-primary text-center font-semibold">2 Żrc</p>
+      <p>+ Tiempo: Recibiras los Ziri Cash generados al transcurrir 3 días
+        <br>
+        <br>
+        + Resultado: Recibiras un total de 4 ZRC
+      </p>
+      <ng-template pTemplate="footer">
+        <button type="button" pButton class="min-w-full" label="Adquirir"></button>
+      </ng-template>
+    </p-card>
+    <p-card class="lg:col-4 col-12" header="Zirium 2.0">
+      <p class="text-6xl text-primary text-center font-semibold">10 Żrc</p>
+      <p>+ Tiempo: Recibiras los Ziri Cash generados al transcurrir 3 días
+        <br>
+        <br>
+        + Resultado: Recibiras un total de 20 ZRC
+      </p>
+      <ng-template pTemplate="footer">
+        <button type="button" pButton class="min-w-full" label="Adquirir"></button>
+      </ng-template>
+    </p-card>
+    <p-card class="lg:col-4 col-12" header="Zirium Pro">
+      <p class="text-6xl text-primary text-center font-semibold">18 Żrc</p>
+      <p>+ Tiempo: Recibiras los Ziri Cash generados al transcurrir 3 días
+        <br>
+        <br>
+        + Resultado: Recibiras un total de 36 ZRC
+      </p>
+      <ng-template pTemplate="footer">
+        <button type="button" pButton class="min-w-full" label="Adquirir"></button>
+      </ng-template>
+    </p-card>
+  </div>
+  <div class="pt-8 mt-7">
+    <span class="text-primary text-5xl font-bold ">Procedimiento</span>
+    <p class="font-light text-xl text-justify line-height-3">
+      - Inicia sesión.<br><br>
+      - Accede a la sección "generar".<br><br>
+      - Lee la información de los planes disponibles.<br><br>
+      - Dale click al plan de tu preferencia para adquirirlo.<br><br>
+      - Listo, solo te queda esperar que transcurra el periodo de tiempo establecido
+      y recibirás los Ziri Cash generados.
 
+    </p>
+
+  </div>
+</p-dialog>
+<!--TODO: MODAL 2-->
+<p-dialog position="top-left" header="Trabaja con nosotros" [modal]="true" [closable]="true" [keepInViewport]="true"
+  [dismissableMask]="true" [(visible)]="display2" [closeOnEscape]="true"
+  [breakpoints]="{'960px': '75vw', '640px': '100vw'}" [style]="{width: '30vw'}">
+  <span class="text-primary text-5xl font-bold">Te invitamos a formar parte de nuestro equipo.</span>
+  <p class="font-light text-xl text-justify line-height-3">Si eres una persona emprendedora, decidida y te gustan los
+    negocios, en Ziri te damos la oportunidad de trabajar
+    con nosotros y ser recompensado por tu labor.</p>
+  <span class="text-primary text-4xl font-bold">Contacto</span>
+  <p class="font-light text-xl text-justify line-height-3">
+    Para obtener más información sobre el empleo, comunicate a nuestro correo electrónico o vía Telegram.
+
+  </p>
+  <small class=" text-base text-justify line-height-3 pt-3">
+    Email: correo@mail.com
+    <br>
+    Telegram: @TelegramAccount
+  </small>
+</p-dialog>
+<!--TODO: MODAL 3-->
+<p-dialog header="FAQ:" [modal]="true" [closable]="true" [keepInViewport]="true" [dismissableMask]="true"
+  [(visible)]="display3" [closeOnEscape]="true" [breakpoints]="{'960px': '75vw', '640px': '100vw'}"
+  [style]="{width: '50vw'}">
+  <div class="pt-5">
+
+    <p-fieldset [toggleable]="true" [collapsed]="false">
+      <ng-template pTemplate="header"><span class="text-primary text-2xl">¿Que es un zirinauta?</span></ng-template>
+      <p class="text-xl">Zirinauta es el termino que utilizamos para referirnos a nuestros usuarios. Ser un Zirinauta
+        significa ser una
+        persona de mente abierta, decidida y objetiva.</p>
+    </p-fieldset>
+  </div>
+  <div class="pt-5">
+    <p-fieldset [toggleable]="true" [collapsed]="true">
+      <ng-template pTemplate="header"><span class="text-primary text-2xl">¿Donde obtengo Ziri cash?</span></ng-template>
+      <p class="text-xl">
+
+        El Exchange funciona como sitio de intercambio, ahí puedes cambiar tu dinero por Ziri cash o viceversa.
+      </p>
+    </p-fieldset>
+
+  </div>
+
+
+  <div class="pt-5">
+    <p-fieldset legend="" [toggleable]="true" [collapsed]="true">
+      <ng-template pTemplate="header"><span class="text-primary text-2xl">¿Quien define el valor de Ziri cash?</span>
+      </ng-template>
+      <p class="text-xl">
+
+        El valor de Ziri cash no lo define ningún mercado, es establecido por nosotros como propietarios, ya que es una
+        moneda de uso interno.
+      </p>
+    </p-fieldset>
+
+  </div>
+
+  <div class="pt-5">
+
+    <p-fieldset [toggleable]="true" [collapsed]="true">
+      <ng-template pTemplate="header"><span class="text-primary text-2xl">¿Puedo pagar con Ziri cash en cualquier
+          sitio?</span></ng-template>
+      <p class="text-xl">
+
+        No. Solo puedes usar tus Ziri Cash para operar dentro de esta plataforma.
+      </p>
+    </p-fieldset>
+  </div>
+
+</p-dialog>
+<!--TODO: MODAL 4-->
+<p-dialog [modal]="true" [keepInViewport]="true" [dismissableMask]="true" [closable]="true" [(visible)]="display4"
+  [closeOnEscape]="true" [breakpoints]="{'960px': '75vw', '640px': '100vw'}" [style]="{width: '30vw'}">
+  <div class="grid -ml-7 md:ml-0">
+    <div class="col">
+      <div class="grid">
+        <div class="col-4"></div>
+        <div class="col-4 justify-content-center pl-6 ml-2">
+          <p-avatar size="xlarge" image="/assets/user.png"></p-avatar>
+        </div>
+        <div class="col-4"></div>
+      </div>
+      <div class="col">
+        <div class="grid">
+          <div class="col"></div>
+          <div class="col">
+            <span class="justify-content-center pl-5 -ml-2 text-4xl"> Usuario</span>
+          </div>
+          <div class="col"></div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="grid">
+          <div class="col"></div>
+          <div class="col">
+            <span class="justify-content-center pl-8 -ml-3"> DNI</span>
+          </div>
+          <div class="col"></div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="grid">
+          <div class="col">
+            <span class="pl-8">Pais</span>
+          </div>
+          <div class="col">
+          </div>
+          <div class="col">
+            <span class="pl-4">Estado</span>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="grid">
+          <div class="col">
+            <span class="pl-8 text-sm">Pais</span>
+          </div>
+          <div class="col">
+          </div>
+          <div class="col">
+            <span class="pl-4 ml-1 text-sm">Estado</span>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="grid">
+          <div class="col">
+          </div>
+          <div class="col">
+            <span class="justify-content-center pl-6 -ml-5 text-2xl"> Calificaciones</span>
+          </div>
+          <div class="col">
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="grid">
+          <div class="col">
+            <div class="pl-8">
+
+              <button pButton pRipple type="button" icon="pi pi-plus"
+                class="p-button-rounded p-button-success cursor-auto"></button>
+            </div>
+          </div>
+          <div class="col">
+          </div>
+          <div class="col">
+            <div class="pl-4">
+
+              <button pButton pRipple type="button" icon="pi pi-minus"
+                class="p-button-rounded p-button-danger cursor-auto"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="grid">
+          <div class="col">
+            <span class="pl-6 ml-6">1</span>
+          </div>
+          <div class="col">
+          </div>
+          <div class="col">
+            <span class="pl-4 ml-4">1</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</p-dialog>
+<!--TODO: MODAL 5-->
+<p-dialog [modal]="true" [closable]="true" [keepInViewport]="true" [dismissableMask]="true" [(visible)]="display5"
+  [closeOnEscape]="true" [breakpoints]="{'960px': '75vw', '640px': '100vw'}" [style]="{width: '50vw'}">
+  5
 </p-dialog>

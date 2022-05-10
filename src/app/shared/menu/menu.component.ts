@@ -14,7 +14,7 @@ import { ModalsComponent } from '../modals/modals.component';
   ]
 })
 export class MenuComponent implements OnInit {
-  @ViewChild('modals') modals: ModalsComponent | undefined;  
+  @ViewChild('modals') modals: ModalsComponent | undefined;
   item: MenuItem[] = [];
   buttonsLabel: ButtonLabel[] = [];
   theme: string = "md-light-deeppurple";
@@ -24,7 +24,8 @@ export class MenuComponent implements OnInit {
   constructor(
     private router: Router,
     private themeService: ThemeService
-  ){if (localStorage.getItem('Theme') === 'md-dark-deeppurple.css') {
+  ) {
+    if (localStorage.getItem('Theme') === 'md-dark-deeppurple.css') {
       this.checked = true
     }
   }
@@ -133,7 +134,7 @@ export class MenuComponent implements OnInit {
             icon: 'pi pi-user',
             styleClass: 'md:mr-3',
             command: () => {
-              (this.modals!.show(1))
+              (this.modals!.show(5))
             }
           },
         ];

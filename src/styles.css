@@ -28,7 +28,7 @@ body::-webkit-scrollbar-thumb{
   border: 1px solid var(--surface-c); /* border radius/* creates padding around scroll thumb */
 }
 
-.p-datatable-wrapper::-webkit-scrollbar  {
+.p-datatable-wrapper ::-webkit-scrollbar  {
   width: 12px;               /* width of the entire scrollbar */
 }
 .p-datatable-wrapper  {
@@ -55,6 +55,18 @@ body::-webkit-scrollbar-thumb{
 }
 .p-dropdown-items-wrapper::-webkit-scrollbar-thumb {
   background-color: var(--surface-d);    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+  border: 2px solid var(--surface-c); /* border radius/* creates padding around scroll thumb */
+}
+
+.p-dialog-content::-webkit-scrollbar  {
+  width: 8px;               /* width of the entire scrollbar */
+}
+.p-dialog-content::-webkit-scrollbar-track  {
+  background: var(--surface-a);        /* color of the tracking area */
+}
+.p-dialog-content::-webkit-scrollbar-thumb {
+  background-color: var(--surface-d); /* color of the scroll thumb */
   border-radius: 20px;       /* roundness of the scroll thumb */
   border: 2px solid var(--surface-c); /* border radius/* creates padding around scroll thumb */
 }
