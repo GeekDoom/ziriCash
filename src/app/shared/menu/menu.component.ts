@@ -158,7 +158,13 @@ export class MenuComponent implements OnInit {
             label: 'Register',
             icon: 'pi pi-fw pi-sign-in',
             routerLink: '/auth/register',
-          }
+          },
+          {
+            label: 'Logout',
+            icon: 'pi pi-fw pi-power-off',
+            routerLink: '/index',
+            styleClass: 'md:mr-3'
+          },
 
         ];
 
