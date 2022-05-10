@@ -19,12 +19,15 @@ export class MenuComponent implements OnInit {
   buttonsLabel: ButtonLabel[] = [];
   theme: string = "md-light-deeppurple";
   url = this.router.url;
-  checked = false
+  checked!: boolean;
 
   constructor(
     private router: Router,
     private themeService: ThemeService
-  ) {}
+  ){if (localStorage.getItem('Theme') === 'md-dark-deeppurple.css') {
+      this.checked = true
+    }
+  }
 
   ngOnInit() {
     switch (this.url) {
@@ -183,9 +186,12 @@ export class MenuComponent implements OnInit {
     if (!checked) {
       this.theme = 'md-light-deeppurple';
       this.themeService.switchTheme(this.theme);
+      console.log(checked)
     } else {
       this.theme = 'md-dark-deeppurple'
       this.themeService.switchTheme(this.theme)
+      console.log(checked)
+
     }
   }
 }
