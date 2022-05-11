@@ -9,6 +9,7 @@ import { Dashboard } from '../../interfaces/tables';
   selector: 'app-exchange',
   templateUrl: './exchange.component.html',
   styles: [
+    
   ]
 })
 export class ExchangeComponent implements OnInit {
