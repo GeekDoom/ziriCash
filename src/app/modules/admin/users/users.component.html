@@ -1,1 +1,64 @@
 <app-menu></app-menu>
+<div class="container md:px-8 py-8">
+  <div class="card">
+    <div class="mb-3 text-primary">
+      <p-button type="button" icon="pi pi-chevron-left" (click)="prev()" [disabled]="isFirstPage()"
+        styleClass="p-button-text"></p-button>
+      <p-button type="button" icon="pi pi-refresh" (click)="reset()" styleClass="p-button-text"></p-button>
+      <p-button type="button" icon="pi pi-chevron-right" (click)="next()" [disabled]="isLastPage()"
+        styleClass="p-button-text"></p-button>
+    </div>
+    <p-table #dt [value]="users!" responsiveLayout="scroll" [paginator]="true" [rows]="rows" class="pt-8"
+      [scrollable]="true" styleClass="p-datatable-striped " [rowsPerPageOptions]="[10,25,50,100]"
+      currentPageReportTemplate="Showing {first} to {last} of {totalRecords}
+      entries" [showCurrentPageReport]="true" [(first)]="first">
+      <ng-template pTemplate="header">
+        <tr>
+          <th style="min-width:200px" class="justify-content-start" pSortableColumn="id">ID <p-sortIcon field="id">
+            </p-sortIcon>
+          </th>
+          <th style="min-width:200px" class="justify-content-start" pSortableColumn="name">Name <p-sortIcon
+              field="name"></p-sortIcon>
+          </th>
+          <th style="min-width:200px" class="justify-content-start" pSortableColumn="dni">DNI <p-sortIcon field="dni">
+            </p-sortIcon>
+          </th>
+          <th style="min-width:250px" class="justify-content-start" pSortableColumn="email">Email <p-sortIcon
+              field="email"></p-sortIcon>
+          </th>
+          <th style="min-width:100px" class="justify-content-center" pSortableColumn="type">Type <p-sortIcon
+              field="type"></p-sortIcon>
+          </th>
+          <th style="min-width:200px" class="justify-content-start" pSortableColumn="creation">Creation <p-sortIcon
+              field="creation"></p-sortIcon>
+          </th>
+          <th style="min-width:200px" class="justify-content-start" pSortableColumn="manage">
+          </th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-user class="flex flex-wrap">
+        <tr>
+          <td style="min-width:200px" class="justify-content-start">{{user.id}}</td>
+          <td style="min-width:200px" class="justify-content-start">{{user.name}}</td>
+          <td style="min-width:200px" class="justify-content-start">{{user.dni}}</td>
+          <td style="min-width:250px" class="justify-content-start">{{user.email}}</td>
+          <td style="min-width:100px" class="justify-content-center" *ngIf="user.type === true"><button pButton
+              class="p-button-rounded p-button-danger pointer-events-none min-width-50px" style="min-width: 100px;"
+              label="Admin"></button>
+          </td>
+          <td style="min-width:100px" class="justify-content-center" *ngIf="user.type === false"><button pButton
+              class="p-button-rounded p-button-success pointer-events-none min-width-50px" style="min-width: 100px;"
+              label="User"></button>
+          </td>
+          <td style="min-width:200px" class="justify-content-start">{{user.creation}}</td>
+          <td style="min-width:200px" class="justify-content-start">
+            <button pButton pRipple type="button" icon="pi pi-pencil"
+              class="p-button-rounded p-button-warning mx-1"></button>
+            <button pButton pRipple type="button" icon="pi pi-trash"
+              class="p-button-rounded p-button-danger mx-1"></button>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</div>

@@ -7,6 +7,7 @@ import { MovementsComponent } from './movements/movements.component';
 import { PublicationsComponent } from './publications/publications.component';
 import { ReportsComponent } from './reports/reports.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { PrimeNgModule } from 'src/app/prime-ng/prime-ng.module';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { SharedModule } from 'src/app/shared/shared.module';
   imports: [
     CommonModule,
     AdminRoutingModule,
-    SharedModule
+    SharedModule,
+    PrimeNgModule
   ]
 })
 export class AdminModule { }

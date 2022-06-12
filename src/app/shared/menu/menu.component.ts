@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { MenuItem } from 'primeng/api';
 import { ButtonLabel } from 'src/app/core/interfaces/buttonLabel';
 import { ThemeService } from 'src/app/core/services/theme.service';

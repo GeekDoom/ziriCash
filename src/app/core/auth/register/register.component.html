@@ -10,6 +10,14 @@
     <div class="form-grid grid">
       <div class="field col">
         <span class="p-input-icon-left w-full">
+          <i class="pi pi-user"></i>
+          <input id="fname" type="text" pInputText class="w-full" placeholder="Full name">
+        </span>
+      </div>
+    </div>
+    <div class="form-grid grid">
+      <div class="field col">
+        <span class="p-input-icon-left w-full">
           <i class="pi pi-envelope"></i>
           <input id="email1" type="email" pInputText class="w-full" placeholder="Email">
         </span>
@@ -48,6 +56,13 @@
           <i class="pi pi-globe"></i>
           <input id="pais" type="text" pInputText class="w-full" placeholder="Country">
         </span>
+      </div>
+    </div>
+    <!--TOS-->
+    <div class="flex align-items-center justify-content-between mb-6">
+      <div class="flex align-items-center">
+        <p-checkbox id="tos" [binary]="true" styleClass="mr-2"></p-checkbox>
+        <a routerLink="/auth/register" class="no-underline" for="tos">Accept T&S</a>
       </div>
     </div>
 
