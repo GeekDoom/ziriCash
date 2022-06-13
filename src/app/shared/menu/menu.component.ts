@@ -35,7 +35,7 @@ export class MenuComponent implements OnInit {
       case '/index':
         this.item = [
           {
-            label: 'User',
+            label: 'Usuario',
             icon: 'pi pi-fw pi-users',
             routerLink: '/user',
             styleClass: 'md:mr-3'
@@ -47,7 +47,7 @@ export class MenuComponent implements OnInit {
             styleClass: 'md:mr-3'
           },
           {
-            label: 'Login',
+            label: 'Ingresar',
             icon: 'pi pi-fw pi-sign-in',
             routerLink: '/auth',
             styleClass: 'md:mr-3'
@@ -56,7 +56,7 @@ export class MenuComponent implements OnInit {
         ];
         this.buttonsLabel = [
           {
-            label: 'Login',
+            label: 'Ingresar',
             route: '/auth',
             icon: 'pi pi-fw pi-sign-in'
           }
@@ -70,32 +70,32 @@ export class MenuComponent implements OnInit {
       case '/admin/transactions':
         this.item = [
           {
-            label: 'Users',
+            label: 'Usuario',
             icon: 'pi pi-fw pi-users',
             routerLink: '/admin/users',
             styleClass: 'md:mr-3'
 
           },
           {
-            label: 'Reports',
+            label: 'Reportes',
             icon: 'pi pi-fw pi-ticket',
             routerLink: '/admin/reports',
             styleClass: 'md:mr-3'
           },
           {
-            label: 'Publications',
+            label: 'Publicaciones',
             icon: 'pi pi-fw pi-book',
             routerLink: '/admin/publications',
             styleClass: 'md:mr-3'
           },
           {
-            label: 'Transactions',
+            label: 'Transacciones',
             icon: 'pi pi-fw pi-chart-line',
             routerLink: '/admin/transactions',
             styleClass: 'md:mr-3'
           },
           {
-            label: 'Logout',
+            label: 'Salir',
             icon: 'pi pi-fw pi-power-off',
             routerLink: '/index',
             styleClass: 'md:mr-3'
@@ -110,20 +110,20 @@ export class MenuComponent implements OnInit {
       case '/user/generate':
         this.item = [
           {
-            label: 'Wallet',
+            label: 'Billetera',
             icon: 'pi pi-fw pi-wallet',
             routerLink: '/user/wallet',
             styleClass: 'md:mr-3'
 
           },
           {
-            label: 'Exchange',
+            label: 'Cambio de divisa',
             icon: 'pi pi-fw pi-sort-alt',
             routerLink: '/user/exchange',
             styleClass: 'md:mr-3'
           },
           {
-            label: 'Generate',
+            label: 'Generar',
             icon: 'pi pi-percentage',
             routerLink: '/user/generate',
             styleClass: 'md:mr-3'
@@ -137,7 +137,7 @@ export class MenuComponent implements OnInit {
             }
           },
           {
-            label: 'Logout',
+            label: 'Salir',
             icon: 'pi pi-fw pi-power-off',
             routerLink: '/index',
             styleClass: 'md:mr-8',

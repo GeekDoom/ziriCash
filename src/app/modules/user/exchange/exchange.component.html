@@ -2,7 +2,7 @@
 <div class="grid">
   <div class="col-3"></div>
   <div class="py-8 md:col-6 col-12">
-    <p-panel header="Exchange">
+    <p-panel header="Cambio de divisa">
       <form autocomplete="off" [formGroup]="exForm">
         <div class="grid p-fluid">
           <div class="col-12 md:col-6">
@@ -57,13 +57,14 @@
       entries" [showCurrentPageReport]="true" [(first)]="first">
       <ng-template pTemplate="header">
         <tr>
-          <th style="min-width:250px" pSortableColumn="full_name">Name <p-sortIcon field="full_name"></p-sortIcon>
+          <th style="min-width:250px" pSortableColumn="full_name">Nombre <p-sortIcon field="full_name"></p-sortIcon>
           </th>
-          <th style="min-width:250px" pSortableColumn="toc">Type of change <p-sortIcon field="toc"></p-sortIcon>
+          <th style="min-width:250px" pSortableColumn="toc">Tipo de cambio <p-sortIcon field="toc"></p-sortIcon>
           </th>
-          <th style="min-width:250px" pSortableColumn="desc">Description <p-sortIcon field="desc"></p-sortIcon>
+          <th style="min-width:250px" pSortableColumn="desc">Descripción <p-sortIcon field="desc"></p-sortIcon>
           </th>
-          <th style="min-width:250px" pSortableColumn="amount">Amount <p-sortIcon field="amount"></p-sortIcon>
+          <th style="min-width:200px" class="justify-content-center" pSortableColumn="amount">Cantidad <p-sortIcon
+              field="amount"></p-sortIcon>
           </th>
         </tr>
       </ng-template>
@@ -72,7 +73,7 @@
           <td style="min-width:250px">{{dashboard.full_name}}</td>
           <td style="min-width:250px">{{dashboard.toc}}</td>
           <td style="min-width:250px">{{dashboard.desc}}</td>
-          <td style="min-width:250px">{{dashboard.amount | currency: 'Żrc '}}</td>
+          <td style="min-width:200px" class="justify-content-center">{{dashboard.amount | currency: 'Żrc '}}</td>
         </tr>
       </ng-template>
     </p-table>

@@ -1,1 +1,48 @@
 <app-menu></app-menu>
+<div class="contaienr py-5 mx-7">
+  <button pButton class="p-button-text p-button-lg" routerLink="/user" icon="pi pi-arrow-left" label="Return"></button>
+</div>
+<div class="container md:px-8">
+  <div class="card">
+    <div class="mb-3 text-primary">
+      <p-button type="button" icon="pi pi-chevron-left" (click)="prev()" [disabled]="isFirstPage()"
+        styleClass="p-button-text"></p-button>
+      <p-button type="button" icon="pi pi-refresh" (click)="reset()" styleClass="p-button-text"></p-button>
+      <p-button type="button" icon="pi pi-chevron-right" (click)="next()" [disabled]="isLastPage()"
+        styleClass="p-button-text"></p-button>
+    </div>
+    <p-table #dt [value]="transactions!" responsiveLayout="scroll" [paginator]="true" [rows]="rows" class="pt-8"
+      [scrollable]="true" styleClass="p-datatable-striped " [rowsPerPageOptions]="[10,25,50,100]"
+      currentPageReportTemplate="Showing {first} to {last} of {totalRecords}
+      entries" [showCurrentPageReport]="true" [(first)]="first">
+      <ng-template pTemplate="header">
+        <tr>
+          <th style="min-width:250px" pSortableColumn="sender">Envía <p-sortIcon field="sender"></p-sortIcon>
+          </th>
+          <th style="min-width:250px" pSortableColumn="receives">Recibe <p-sortIcon field="receives"></p-sortIcon>
+          </th>
+          <th style="min-width:250px" pSortableColumn="movement">Movimiento <p-sortIcon field="movement"></p-sortIcon>
+          </th>
+          <th style="min-width:250px" pSortableColumn="amount">Cantidad <p-sortIcon field="amount"></p-sortIcon>
+          </th>
+          <th style="min-width:250px" pSortableColumn="date">Fecha <p-sortIcon field="date"></p-sortIcon>
+          </th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-transaction class="flex flex-wrap">
+        <tr>
+          <td style="min-width:250px">{{transaction.sender}}</td>
+          <td style="min-width:250px">{{transaction.receives}}</td>
+          <td style="min-width:250px" *ngIf="transaction.movement === 1"><button pButton
+              class="p-button-rounded p-button-success pointer-events-none min-width-150px" style="min-width: 100px;"
+              label="Recibe"></button></td>
+          <td style="min-width:250px" *ngIf="transaction.movement === 0"><button pButton
+              class="p-button-rounded p-button-danger pointer-events-none min-width-150px" style="min-width: 100px;"
+              label="Envía"></button></td>
+          <td style="min-width:250px">{{transaction.amount | currency: 'Żrc '}}</td>
+          <td style="min-width:250px">{{transaction.date}}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</div>

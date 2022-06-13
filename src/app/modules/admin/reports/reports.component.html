@@ -1,1 +1,43 @@
 <app-menu></app-menu>
+<div class="container md:px-8 py-8">
+  <div class="card">
+    <div class="mb-3 text-primary">
+      <p-button type="button" icon="pi pi-chevron-left" (click)="prev()" [disabled]="isFirstPage()"
+        styleClass="p-button-text"></p-button>
+      <p-button type="button" icon="pi pi-refresh" (click)="reset()" styleClass="p-button-text"></p-button>
+      <p-button type="button" icon="pi pi-chevron-right" (click)="next()" [disabled]="isLastPage()"
+        styleClass="p-button-text"></p-button>
+    </div>
+    <p-table #dt [value]="reports!" responsiveLayout="scroll" [paginator]="true" [rows]="rows" class="pt-8"
+      [scrollable]="true" styleClass="p-datatable-striped " [rowsPerPageOptions]="[10,25,50,100]"
+      currentPageReportTemplate="Showing {first} to {last} of {totalRecords}
+      entries" [showCurrentPageReport]="true" [(first)]="first">
+      <ng-template pTemplate="header">
+        <tr>
+          <th style="min-width:200px" class="justify-content-start" pSortableColumn="emisor">Denunciante <p-sortIcon
+              field="emisor">
+            </p-sortIcon>
+          </th>
+          <th style="min-width:200px" class="justify-content-start" pSortableColumn="action">Acción a tomar <p-sortIcon
+              field="action"></p-sortIcon>
+          </th>
+          <th style="min-width:200px" class="justify-content-start" pSortableColumn="denunciado">Denunciado <p-sortIcon
+              field="denunciado">
+            </p-sortIcon>
+          </th>
+          <th style="min-width:250px" class="justify-content-start" pSortableColumn="fecha">Fecha <p-sortIcon
+              field="fecha"></p-sortIcon>
+          </th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-report class="flex flex-wrap">
+        <tr>
+          <td style="min-width:200px" class="justify-content-start">{{report.emisor}}</td>
+          <td style="min-width:200px" class="justify-content-start">{{report.accion}}</td>
+          <td style="min-width:200px" class="justify-content-start">{{report.denunciado}}</td>
+          <td style="min-width:200px" class="justify-content-start">{{report.fecha}}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</div>

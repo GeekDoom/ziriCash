@@ -1,5 +1,4 @@
 import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { ModalsService } from '../services/modals.service';
 
 
 
@@ -20,7 +19,6 @@ export class ModalsComponent implements OnInit, OnDestroy {
   display5: boolean = false;
   static show: any;
   constructor(
-    private ms: ModalsService,
   ) { }
 
 

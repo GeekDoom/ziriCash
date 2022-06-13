@@ -12,3 +12,11 @@ export interface Dashboard {
     desc: string;
     amount: number;
 }
+
+export interface Transactions {
+    sender?: string;
+    receives?: string;
+    movement?: number;
+    amount?: number;
+    date?: string;
+}

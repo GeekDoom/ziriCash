@@ -1,1 +1,40 @@
 <app-menu></app-menu>
+<!--Table-->
+<div class="grid"></div>
+<div class="container md:px-8 py-8">
+  <div class="card">
+    <div class="mb-3">
+      <p-button type="button" icon="pi pi-chevron-left" (click)="prev()" [disabled]="isFirstPage()"
+        styleClass="p-button-text"></p-button>
+      <p-button type="button" icon="pi pi-refresh" (click)="reset()" styleClass="p-button-text"></p-button>
+      <p-button type="button" icon="pi pi-chevron-right" (click)="next()" [disabled]="isLastPage()"
+        styleClass="p-button-text"></p-button>
+    </div>
+    <p-table #dt [value]="dashboard!" responsiveLayout="scroll" [paginator]="true" [rows]="rows" class="py-8"
+      [scrollable]="true" styleClass="p-datatable-striped " [rowsPerPageOptions]="[10,25,50,100]"
+      currentPageReportTemplate="Showing {first} to {last} of {totalRecords}
+      entries" [showCurrentPageReport]="true" [(first)]="first">
+      <ng-template pTemplate="header">
+        <tr>
+          <th style="min-width:250px" pSortableColumn="full_name">Nombre <p-sortIcon field="full_name"></p-sortIcon>
+          </th>
+          <th style="min-width:250px" pSortableColumn="toc">Tipo de cambio <p-sortIcon field="toc"></p-sortIcon>
+          </th>
+          <th style="min-width:250px" pSortableColumn="desc">Descripción <p-sortIcon field="desc"></p-sortIcon>
+          </th>
+          <th style="min-width:200px" class="justify-content-center" pSortableColumn="amount">Cantidad <p-sortIcon
+              field="amount"></p-sortIcon>
+          </th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-dashboard class="flex flex-wrap">
+        <tr>
+          <td style="min-width:250px">{{dashboard.full_name}}</td>
+          <td style="min-width:250px">{{dashboard.toc}}</td>
+          <td style="min-width:250px">{{dashboard.desc}}</td>
+          <td style="min-width:200px" class="justify-content-center">{{dashboard.amount | currency: 'Żrc '}}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</div>
