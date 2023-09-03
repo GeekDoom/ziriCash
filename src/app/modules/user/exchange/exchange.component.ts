@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { UntypedFormBuilder, Validators } from '@angular/forms';
 import { SortEvent } from 'primeng/api';
 import { TablesService } from 'src/app/shared/services/tables.service';
 import { typeOc } from '../../interfaces/selects';
@@ -31,7 +31,7 @@ export class ExchangeComponent implements OnInit {
 
   constructor(
     private ts: TablesService,
-    private fb: FormBuilder
+    private fb: UntypedFormBuilder
   ) {
     this.toc = [
       { name: 'Bank Transfer', code: 'BTS' },
